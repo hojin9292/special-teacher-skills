@@ -1,5 +1,6 @@
 <!--
 SPDX-FileCopyrightText: 2026 science-teacher-skills contributors
+SPDX-FileCopyrightText: 2026 special-teacher-skills contributors
 SPDX-License-Identifier: Apache-2.0
 -->
 
@@ -8,6 +9,59 @@ SPDX-License-Identifier: Apache-2.0
 이 프로젝트는 [Keep a Changelog](https://keepachangelog.com/ko/1.1.0/) 형식을 따르고,
 버전은 [SemVer](https://semver.org/lang/ko/)를 따른다. 수치를 주장하는 항목은 반드시
 `evals/runs/`의 실채점 기록을 가리킨다 — 측정 없이 수정 없다.
+
+## [Unreleased]
+
+### 바뀜 — 저장소를 특수교육 전용으로 재편, 과학 전용 일반학급 스킬 제거
+
+`sped-lesson-differentiation`(특수교육 기본교육과정 차별화, 성취수준×자극-반응 pool
+2축)을 먼저 3번째 스킬로 추가했다가, 이 저장소의 목적 자체를 특수교육 전용으로
+좁히기로 하면서 과학 전용 일반학급 스킬 2종(`ko12-lesson-planning`,
+`ko12-lesson-differentiation`)과 그에 종속된 evals·pilot·CI 단계를 함께 제거했다.
+계보: `anthropics/k12-teacher-skills` → 본 저장소의 `ko12-lesson-differentiation`
+(과학 전용, 제거됨) → `sped-lesson-differentiation`(특수교육 전용, 이 저장소의 유일한
+스킬).
+
+**추가 — `sped-lesson-differentiation` 스킬**
+
+- 축을 범용 1~5 지원 위계에서 **성취수준(A/B/C) × 자극-반응 pool 조합** 2축으로
+  교체 — 국립특수교육원이 성취기준마다 이미 제공하는 pool(자극 조각×반응 조각으로
+  개별 학생 문장을 짓는 체계)을 그대로 쓴다.
+- `references/data/pool-all-subjects/`에 11개 교과(통합교과·국어·사회·수학·과학·
+  체육·음악·미술·실과·진로와 직업·선택교과) 총 687개 성취기준의 pool 데이터를
+  수록. 과학 고등학교는 국가 성취수준 자료집(A/B/C) 별도 수록
+  (`references/data/science-achievement-levels-hs.md`).
+- 렌더 엔진(`scripts/*.py`, `render_all.sh`, `theme.css`)과
+  `references/curriculum-kr-mcp.md`(공통교육과정 경로용)는 제거된
+  `ko12-lesson-differentiation`이 검증한 것과 사본 동일 — 검증 없이 그대로 재사용.
+- 이식 경위·재현 절차(hwp 변환 스크립트 포함)는
+  [docs/sped-lesson-differentiation-porting-notes.md](docs/sped-lesson-differentiation-porting-notes.md).
+- 남은 일: 공통교육과정(통합학급)용 초등 pool 데이터 미반영, R8 군집화 로직 실학급
+  검증 전, 이 스킬 전용 evals 루브릭 아직 없음 — 위 문서와 DESIGN.md §6 참고.
+
+**제거**
+
+- `plugin/skills/ko12-lesson-planning/`, `plugin/skills/ko12-lesson-differentiation/`
+  (과학 전용 일반학급 스킬)
+- `evals/ko12-lesson-planning/`, `evals/ko12-lesson-differentiation/`,
+  `evals/live-conversation/` (위 스킬 전용 루브릭·시나리오)
+- `pilot/elementary/`, `pilot/middle-school/`, `pilot/random-elementary/`,
+  `pilot/urgent-middle-school/` (과학 수업 파일럿 4종)
+- `tests/check_lesson.py`, `tests/smoke/` (과학 lesson.json 스키마 DoD 검사기)
+- `docs/superpowers/`, `docs/evals_port_review.py`, `docs/evals-port-review.html`,
+  `docs/evals-unchanged-criteria.md` (과학 전환 당시의 계획·evals 포팅 문서)
+- 최상위 `NOTICE` (Common Core 고지 — 그 근거였던 미국 과학 pedagogy 레퍼런스와 함께
+  제거된 콘텐츠에만 해당)
+- `evals/runs/*`의 과거 실채점 기록은 지금 존재하지 않는 스킬에 대한 것이라 삭제하지
+  않고 이력으로만 남겼다(`evals/README.md` 참고).
+
+**이름 변경**
+
+- 마켓플레이스·플러그인 이름을 `science-teacher-skills` → `special-teacher-skills`로
+  변경(`.claude-plugin/marketplace.json`, `plugin/.claude-plugin/plugin.json`). 설치
+  명령·홈페이지 링크를 실제 저장소(`hojin9292/special-teacher-skills`)로 정정.
+- `README.md`, `DESIGN.md`, `evals/README.md`, CI(`.github/workflows/ci.yml`)를 단일
+  특수교육 스킬 체제에 맞게 다시 썼다.
 
 ## [0.3.0-preview.1] — 2026-08-08
 

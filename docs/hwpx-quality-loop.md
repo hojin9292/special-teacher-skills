@@ -5,6 +5,14 @@ SPDX-License-Identifier: Apache-2.0
 
 # hwpx-quality-loop — HWPX 품질 재귀 개선 루프
 
+> **2026-09-02 안내**: 이 문서는 저장소가 과학 전용 일반학급 스킬(`ko12-lesson-planning`,
+> `ko12-lesson-differentiation`)이던 시절의 개선 이력이다. 아래 경로(`pilot/elementary` 등,
+> `tests/check_lesson.py`)는 특수교육 전환 과정에서 제거됐다 — 지금은 존재하지 않는다.
+> 렌더 엔진(`scripts/*.py`, `theme.css`)은 `plugin/skills/sped-lesson-differentiation/`이
+> 무수정 재사용 중이므로 이 문서가 기록한 개선 결과는 여전히 유효하다. 렌더러를 다시
+> 고칠 때는 이 루프를 `sped-lesson-differentiation/scripts/render_all.sh`와 그 스킬의
+> 예시(`references/example_differentiation.json`)로 다시 돌리면 된다.
+
 HWPX(교사 전달물)가 HTML(내부 미리보기)과 같은 품질로 나오도록, **측정 → 수정 →
 재렌더 → 재측정**을 수렴할 때까지 반복하는 루프. 2026-08-08에 1회차를 실행해
 기준선 805건 결함을 0건으로 수렴시켰다(아래 이력). 앞으로 렌더러를 고치거나
