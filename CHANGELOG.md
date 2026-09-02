@@ -9,6 +9,29 @@ SPDX-License-Identifier: Apache-2.0
 버전은 [SemVer](https://semver.org/lang/ko/)를 따른다. 수치를 주장하는 항목은 반드시
 `evals/runs/`의 실채점 기록을 가리킨다 — 측정 없이 수정 없다.
 
+## [Unreleased]
+
+### 추가 — `sped-lesson-differentiation` 스킬
+
+특수교육(기본교육과정) 수업 차별화 스킬 신설. 계보:
+`anthropics/k12-teacher-skills` → 본 저장소의 `ko12-lesson-differentiation`(과학 전용) →
+`sped-lesson-differentiation`(특수교육 전용, 2축 개편).
+
+- 축을 범용 1~5 지원 위계에서 **성취수준(A/B/C) × 자극-반응 pool 조합** 2축으로
+  교체 — 국립특수교육원이 성취기준마다 이미 제공하는 pool(자극 조각×반응 조각으로
+  개별 학생 문장을 짓는 체계)을 그대로 쓴다.
+- `references/data/pool-all-subjects/`에 11개 교과(통합교과·국어·사회·수학·과학·
+  체육·음악·미술·실과·진로와 직업·선택교과) 총 687개 성취기준의 pool 데이터를
+  수록. 과학 고등학교는 국가 성취수준 자료집(A/B/C) 별도 수록
+  (`references/data/science-achievement-levels-hs.md`).
+- 렌더 엔진(`scripts/*.py`, `render_all.sh`, `theme.css`)과
+  `references/curriculum-kr-mcp.md`는 `ko12-lesson-differentiation`과 사본 동일 —
+  CI의 "렌더러 사본 동일" 게이트에 세 번째 스킬로 편입.
+- 이식 경위·재현 절차(hwp 변환 스크립트 포함)는
+  [docs/sped-lesson-differentiation-porting-notes.md](docs/sped-lesson-differentiation-porting-notes.md).
+- 남은 일: 공통교육과정(통합학급)용 초등 pool 데이터 미반영, R8 군집화 로직 실학급
+  검증 전, evals 루브릭 pool 축 이관 전 — 위 문서의 "아직 안 된 것" 참고.
+
 ## [0.3.0-preview.1] — 2026-08-08
 
 ### 바뀜 — HWPX 렌더러 (두 스킬 공통, 사본 동일)

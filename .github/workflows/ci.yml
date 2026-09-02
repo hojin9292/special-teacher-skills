@@ -27,13 +27,15 @@ jobs:
         with:
           python-version: "3.12"
 
-      # 두 스킬이 렌더러를 각자 동봉한다 — "사본 동일" 원칙. 한쪽만 고친 PR을 여기서 막는다.
+      # 세 스킬이 렌더러를 각자 동봉한다 — "사본 동일" 원칙. 한쪽만 고친 PR을 여기서 막는다.
       - name: 렌더러 사본 동일 (공유 파일 6종)
         run: |
           for f in check_hwpx_min.py lesson_common.py render_documents.py \
                    render_lesson_html.py render_lesson_hwpx.py theme.css; do
             cmp "plugin/skills/ko12-lesson-planning/scripts/$f" \
                 "plugin/skills/ko12-lesson-differentiation/scripts/$f"
+            cmp "plugin/skills/ko12-lesson-planning/scripts/$f" \
+                "plugin/skills/sped-lesson-differentiation/scripts/$f"
           done
 
       - name: 스모크 렌더 + 한글 무결성
@@ -59,9 +61,17 @@ jobs:
               "pilot/$p/differentiation.json" "/tmp/diff-$p"
           done
 
+      # sped-lesson-differentiation은 아직 파일럿 패키지가 없어 스킬 동봉 예시로 스모크한다.
+      - name: 특수교육 차별화 예시 렌더
+        run: |
+          bash plugin/skills/sped-lesson-differentiation/scripts/render_all.sh \
+            plugin/skills/sped-lesson-differentiation/references/example_differentiation.json \
+            /tmp/sped-diff-example
+
       - name: HWPX 품질 검사기 — 렌더 산출물 전체
         run: |
           python tests/check_hwpx_quality.py /tmp/ci-smoke \
             /tmp/out-elementary /tmp/out-middle-school \
             /tmp/out-random-elementary /tmp/out-urgent-middle-school \
-            /tmp/diff-elementary /tmp/diff-middle-school /tmp/diff-random-elementary
+            /tmp/diff-elementary /tmp/diff-middle-school /tmp/diff-random-elementary \
+            /tmp/sped-diff-example

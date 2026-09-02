@@ -6,11 +6,13 @@ Anthropic의 [k12-teacher-skills](https://github.com/anthropics/k12-teacher-skil
 초·중등 체제로 이식했습니다. 성취기준·선수관계·세부 학습 주제는 한국 교육과정 학습맵 MCP
 2종에서 가져오고, 수업 자료는 편집 가능한 **한글(HWPX) 문서**로 나옵니다.
 
-> 이 플러그인은 **과학 전용**입니다. 다른 과목은 다루지 않습니다.
+> `ko12-lesson-planning`/`ko12-lesson-differentiation`은 **과학 전용**입니다. 다른
+> 과목은 다루지 않습니다. `sped-lesson-differentiation`은 특수교육(기본교육과정) 대상
+> 스킬로, 11개 교과를 전부 다룹니다.
 
 ## 무엇을 만드나
 
-스킬 2종이 들어 있습니다.
+스킬 3종이 들어 있습니다.
 
 **① 수업 설계** — "중2 광합성 45분 수업 만들어 줘"라고 하면 한 턴에 세 가지가 나옵니다.
 
@@ -27,6 +29,15 @@ Anthropic의 [k12-teacher-skills](https://github.com/anthropics/k12-teacher-skil
 각 패키지의 문서들은 하나의 소스에서 렌더되므로 서로 어긋날 수 없습니다. 성취기준은
 학습맵이 준 **공식 원문 그대로** 인용하며, 바꿔 쓰지 않습니다.
 
+**③ 특수교육 수업 차별화** (`sped-lesson-differentiation`) — 기본교육과정(특수학급·
+특수학교) 또는 공통교육과정(통합학급) 수업을 **성취수준(A/B/C) × 자극-반응 pool 조합**
+2축으로 차별화합니다. 자극-반응 조합은 범용 척도가 아니라 국립특수교육원이 성취기준마다
+이미 만들어 둔 pool(11개 교과, 687개 성취기준 완비)에서 고릅니다. 교사용 차별화
+수업안 1종 + 학생용 학습지 3종(대표 3그룹으로 군집화)을 한 턴에 한글(HWPX) 문서로
+만듭니다. 자세한 이식 경위는
+[docs/sped-lesson-differentiation-porting-notes.md](docs/sped-lesson-differentiation-porting-notes.md)를
+보세요.
+
 ## 설치
 
 Claude Code에서 두 줄이면 됩니다.
@@ -37,8 +48,9 @@ Claude Code에서 두 줄이면 됩니다.
 ```
 
 터미널에서 하려면 같은 인자로 `claude plugin marketplace add …` / `claude plugin install …`을
-쓰면 됩니다. 설치 후 Claude Code를 재시작하면 스킬 2종(`ko12-lesson-planning`,
-`ko12-lesson-differentiation`)과 학습맵 MCP 2종이 함께 올라옵니다.
+쓰면 됩니다. 설치 후 Claude Code를 재시작하면 스킬 3종(`ko12-lesson-planning`,
+`ko12-lesson-differentiation`, `sped-lesson-differentiation`)과 학습맵 MCP 2종이 함께
+올라옵니다.
 
 저장소를 clone해서 쓰려면 clone한 폴더의 경로를 `marketplace add`에 그대로 넘깁니다.
 
@@ -62,6 +74,12 @@ Claude Code에서 두 줄이면 됩니다.
 산출은 **한글(HWPX) 문서**입니다 — 표준 라이브러리만으로 OWPML을 직접 생성하므로 추가로
 설치할 것이 없습니다.
 
+`sped-lesson-differentiation`은 별도로 이렇게 부릅니다.
+
+```
+이 학생은 기본교육과정을 배우는데, 국어 수업을 우리 반 학생별 성취수준에 맞게 차별화해 줘
+```
+
 ## 데이터 출처
 
 | 데이터 | 출처 |
@@ -69,6 +87,7 @@ Claude Code에서 두 줄이면 됩니다.
 | 중·고 성취기준·주제·선수관계·전이 | [korean-secondary-learning-map-mcp](https://github.com/raphysicst-create/korean-secondary-learning-map-mcp) |
 | 초등 성취기준·주제·선수관계 | [korean-elementary-learning-map-mcp](https://github.com/taehyeonglim/korean-elementary-learning-map-mcp) |
 | 성취기준 원문 | 교육부 고시 2022 개정 교육과정 (NCIC 공개 문서) |
+| 기본교육과정 성취수준·자극-반응 pool (11개 교과) | 국립특수교육원 「기본 교육과정 평가자료」(공개 hwp 문서) |
 
 초등 학습맵의 성취기준 문장은 저작권 정책상 원문을 재수록하지 않고 요약 필드에서 재구성된
 값입니다. 초등 수업안에는 공식 고시문과 대조하라는 안내가 함께 인쇄됩니다. 중등은 원문
