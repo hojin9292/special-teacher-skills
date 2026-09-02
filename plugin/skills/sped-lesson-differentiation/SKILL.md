@@ -17,11 +17,12 @@ license: Complete terms in LICENSE
 SPDX-FileCopyrightText: 2026 Anthropic, PBC
 SPDX-FileCopyrightText: 2026 Learning Commons
 SPDX-FileCopyrightText: 2026 science-teacher-skills contributors
-SPDX-FileCopyrightText: 2026 sped-teacher-skills contributors
+SPDX-FileCopyrightText: 2026 special-teacher-skills contributors
 SPDX-License-Identifier: Apache-2.0
 
-원본 계보: anthropics/k12-teacher-skills → hojin9292/special-teacher-skills
-(ko12-lesson-differentiation, 과학 전용) → 본 스킬(특수교육 전용, 2축 개편)
+원본 계보: anthropics/k12-teacher-skills → hojin9292/special-teacher-skills의
+ko12-lesson-differentiation(과학 전용, 이후 제거) → 본 스킬(특수교육 전용, 2축 개편,
+이 저장소의 유일한 스킬)
 -->
 
 # 특수교육 수업 차별화 (sped-lesson-differentiation)

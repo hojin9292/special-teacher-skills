@@ -21,7 +21,7 @@ SPDX-License-Identifier: Apache-2.0
 ## 판정 입력
 
 1. `tests/check_hwpx_quality.py --json` 리포트 (자동 층의 결과)
-2. 대상 HWPX에서 추출한 텍스트 (`tests/check_lesson.py`의 `hwpx_text` 사용)
+2. 대상 HWPX에서 추출한 텍스트 (`tests/check_hwpx_quality.py`의 `hwpx_lines` 사용)
 3. **한글 PDF 내보내기 스냅샷** (가능한 환경에서) — V 버킷 판정의 근거.
    PDF 없이 텍스트만으로 판정 불가한 항목은 skip으로 기록한다 (fail 아님).
 

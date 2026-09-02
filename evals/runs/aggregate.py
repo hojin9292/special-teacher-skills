@@ -15,7 +15,10 @@ from collections import Counter
 HERE = os.path.dirname(os.path.abspath(__file__))
 EVALS = os.path.dirname(HERE)
 # 판정 파일이 "rubrics" 필드로 자기 루브릭을 선언하지 않던 초기 실행(2026-08-06
-# 이전 형식) 호환용 기본값.
+# 이전 형식) 호환용 기본값. 이 경로들은 특수교육 전환(2026-09-02)에서 과학 전용
+# 스킬과 함께 제거됐다 — 2026-08-06 실행분을 오늘 재집계하려면 그 이전 커밋에서
+# evals/ko12-lesson-planning/rubrics/*.csv를 되살려야 한다. 새 실행은 판정 파일이
+# 자기 rubrics를 선언하므로 이 기본값에 걸리지 않는다.
 DEFAULT_RUBRICS = ["ko12-lesson-planning/rubrics/shared.csv",
                    "ko12-lesson-planning/rubrics/science.csv"]
 MARK = {True: "○", False: "×", "skip": "–"}

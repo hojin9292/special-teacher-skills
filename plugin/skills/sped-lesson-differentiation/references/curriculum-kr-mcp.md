@@ -2,6 +2,7 @@
 SPDX-FileCopyrightText: 2026 Anthropic, PBC
 SPDX-FileCopyrightText: 2026 Learning Commons
 SPDX-FileCopyrightText: 2026 science-teacher-skills contributors
+SPDX-FileCopyrightText: 2026 special-teacher-skills contributors
 SPDX-License-Identifier: Apache-2.0
 
 원본: k12-teacher-skills/plugin/skills/k12-lesson-planning/references/learning-commons-kg.md
@@ -11,7 +12,8 @@ Learning Commons Knowledge Graph 호출 시퀀스를 한국 2022 개정 교육�
 
 # 한국 교육과정 학습맵 MCP — 호출 시퀀스 (차별화)
 
-`ko12-lesson-differentiation` Step 2에서 **학습맵 MCP 도구가 연결된 경우에만** 사용한다.
+`sped-lesson-differentiation` Step 2의 **공통교육과정(통합학급) 경로**에서, 학습맵 MCP
+도구가 연결된 경우에만 사용한다.
 연결되지 않았다면 이 파일 전체를 건너뛴다 (SKILL.md Step 2에 폴백 있음).
 연결됐는데 호출하지 않는 것은 치명적 실패(critical failure)다. 원본 수업을 어떻게
 얻었든(업로드·붙여넣기·링크) 마찬가지다 — 수업을 확보한 것이 이 단계를 대신하지 않는다.
