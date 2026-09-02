@@ -12,6 +12,24 @@ SPDX-License-Identifier: Apache-2.0
 
 ## [Unreleased]
 
+### 추가 — 저지원 문항 형식 (`trace`, 보기/선택형)
+
+실제 국립특수교육원 학습지(업로드 예시)와 대조해보니 렌더러가 서술형 빈 답란만
+지원해 1모둠(가장 구체적인 그룹)에게도 자유서술을 요구하고 있었다. 새 블록 타입
+`trace`(정답을 옅게 미리 인쇄해 따라 쓰기)를 추가하고, 기존 `cards` 블록을
+"보기(단어은행) + 동그라미/선택" 용도로 재사용하는 패턴을 문서화했다.
+
+- `scripts/render_lesson_hwpx.py`, `scripts/render_lesson_html.py`,
+  `scripts/theme.css`에 `trace` 블록 추가(HWPX는 기존 `CH_GRAY` charPr 재사용,
+  헤더 정의 변경 없음). HTML/HWPX 텍스트 패리티 검사 통과.
+- `references/differentiation-rules.md`에 "문항 형식(포맷) — 그룹마다 다르게
+  쓴다" 절 신설(R7과 R8 사이): 1모둠은 `trace`/`cards` 위주, 3모둠(또는 성취수준
+  높은 학생)은 서술형(`workspace`) 학습지를 최소 1종 유지하도록 명시.
+- `references/example_differentiation.json`을 이 패턴으로 갱신 —
+  1모둠은 보기 상자 선택형 + 따라쓰기, 2모둠은 보기 상자 + 직접 기입, 3모둠은
+  기존 서술형 그대로. 렌더 + `tests/check_hwpx_quality.py` 전 항목 재검증 통과.
+- `SKILL.md` Step 3에 새 절 적용을 치명적 실패 조건으로 명시.
+
 ### 바뀜 — 저장소를 특수교육 전용으로 재편, 과학 전용 일반학급 스킬 제거
 
 `sped-lesson-differentiation`(특수교육 기본교육과정 차별화, 성취수준×자극-반응 pool

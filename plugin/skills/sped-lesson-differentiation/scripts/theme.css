@@ -67,6 +67,14 @@ table.headless td:first-child{font-weight:600}
 .ansline{border-bottom:0.7pt solid #C9CFD4}
 .cols{display:flex;gap:24pt}.cols>div{flex:1;min-width:0}
 
+/* 따라쓰기(trace): 정답을 옅게 미리 인쇄한 상자 — 빈 workspace와 대비되는
+   가장 구체적인 그룹(1모둠)용 반응 형식(differentiation-rules.md R3) */
+.trace{border:0.8pt dashed #C9CFD4;border-radius:6pt;padding:10pt 14pt;
+       margin:6pt 0 14pt;text-align:center}
+.tracelabel{font-weight:700;margin-bottom:4pt}
+.tracetext{color:var(--muted);font-size:calc(var(--body-size) + 1pt);line-height:1.7;
+           letter-spacing:0.3pt}
+
 /* --- registry block types (source_card, number_line) -------------------- */
 .sourcecard{border:0.8pt solid var(--border);border-left:3pt solid var(--primary);
             border-radius:4pt;padding:9pt 12pt;margin:6pt 0 14pt;page-break-inside:avoid}
