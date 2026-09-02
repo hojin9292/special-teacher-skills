@@ -120,6 +120,14 @@
       "type": "trace",
       "label": "오늘 한 것",
       "text": "자석을 여러 물건에 대 보았어요."
+    },
+    "t1_word_choice": {
+      "type": "cards",
+      "items": [
+        "못",
+        "나무토막",
+        "플라스틱 조각"
+      ]
     }
   },
   "documents": [
@@ -244,8 +252,16 @@
               "label": "1"
             },
             {
-              "type": "workspace",
-              "size": "small"
+              "type": "paragraph",
+              "text": "**보기**"
+            },
+            {
+              "type": "from_shared",
+              "key": "t1_word_choice"
+            },
+            {
+              "type": "instructions",
+              "text": "자석에 __________이 붙어요."
             }
           ]
         },
@@ -316,8 +332,8 @@
               "label": "1"
             },
             {
-              "type": "workspace",
-              "size": "med"
+              "type": "instructions",
+              "text": "자석에 __________이 붙어요."
             }
           ]
         },
@@ -338,8 +354,17 @@
               "key": "object_word_bank"
             },
             {
-              "type": "workspace",
-              "size": "small"
+              "type": "labeled",
+              "label": "해보기",
+              "text": "물건을 골라 알맞은 칸에 써 보세요."
+            },
+            {
+              "type": "fill_table",
+              "headers": [
+                "붙는 것",
+                "안 붙는 것"
+              ],
+              "blank_rows": 3
             }
           ]
         },
