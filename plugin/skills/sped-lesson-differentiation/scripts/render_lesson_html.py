@@ -15,7 +15,7 @@ Visual design principles:
 
 Block types (canonical names; legacy aliases accepted, see ALIASES in lesson_common):
   paragraph, labeled, list, h2, h3, callout, table, cards, columns, group, page_break,
-  phase_header, fill_in, instructions, workspace, checklist
+  phase_header, fill_in, instructions, workspace, checklist, trace
 
 Usage:
     python render_lesson_html.py lesson.json -o lesson_preview.html
@@ -139,6 +139,13 @@ def render_block(blk: dict, theme: Theme) -> str:
         if blk.get("label"):
             return f"<p class=\"fillin-row\"><b>{md(label_text(blk))}:</b> {line}</p>"
         return f"<p class=\"fillin-row\">{line}</p>"
+    if t == "trace":
+        # 정답을 옅게 미리 인쇄해 학생이 따라 쓰는 상자(국가 학습지의 '따라쓰기'
+        # 관행 — differentiation-rules.md R3). 빈 workspace와 달리 답이 이미
+        # 지면에 있다. 자극-반응이 가장 구체적인 그룹(1모둠)용.
+        label = md(label_text(blk))
+        head = f"<div class=\"tracelabel\">{label}</div>" if label else ""
+        return f"<div class=\"trace\">{head}<div class=\"tracetext\">{md(blk.get('text', ''))}</div></div>"
     if t == "phase_header":
         mins = blk.get("minutes")
         right = f"<span class=\"mins\">{md(mins)}분</span>" if mins is not None else ""
@@ -289,7 +296,7 @@ def render(data: dict) -> str:
 
     LIGHT_TYPES = {"paragraph", "labeled", "list", "checklist", "h2", "h3", "callout",
                    "instructions"}
-    HEAVY_TYPES = {"group", "workspace", "labeled_box"}
+    HEAVY_TYPES = {"group", "workspace", "labeled_box", "trace"}
     for section in data.get("sections", []):
         h1 = (f"<div class=\"h1\"><span>{md(str(section.get('heading', '')).rstrip(': '))}"
               "</span></div>")

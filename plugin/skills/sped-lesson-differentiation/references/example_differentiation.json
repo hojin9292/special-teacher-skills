@@ -1,12 +1,13 @@
 {
-  "theme": { "primary": "#2f7d5c" },
+  "theme": {
+    "primary": "#2f7d5c"
+  },
   "shared": {
     "subject": "과학",
     "grade": "초등학교 3~4학년군 · 기본교육과정",
     "duration": 40,
     "standard_code": "[4과학01-01]",
     "standard_text": "자석과 여러 가지 물체를 가까이했을 때 나타나는 현상을 관찰하고, 자석에 붙는 물체와 붙지 않는 물체를 분류한다.",
-
     "accommodation_note": {
       "teacher": {
         "type": "callout",
@@ -16,20 +17,38 @@
       },
       "student": null
     },
-
     "grouping_note": {
       "teacher": {
         "type": "table",
-        "headers": ["그룹", "자극-반응 조합 (국가 pool)", "포함 성취수준", "근거"],
+        "headers": [
+          "그룹",
+          "자극-반응 조합 (국가 pool)",
+          "포함 성취수준",
+          "근거"
+        ],
         "rows": [
-          ["1모둠", "물건에 자석을 가까이했을 때 나타나는 현상을 느껴보고 → 반응을 보인다", "C수준 학생 2명", "지난 차시 관찰기록 — 촉각 자극에 반응"],
-          ["2모둠", "교실 물건에 자석을 가까이했을 때 현상을 교사 인도에 따라 바라보고 → 스티커로 표시한다", "B수준 학생 2명", "시범 후 스스로 표시 가능"],
-          ["3모둠", "자석과 여러 물체를 가까이했을 때 현상을 관찰하고 → 표로 정리한다", "A수준 학생 1명", "정리 문항에서 분류 근거를 말로 설명 가능"]
+          [
+            "1모둠",
+            "물건에 자석을 가까이했을 때 나타나는 현상을 느껴보고 → 반응을 보인다",
+            "C수준 학생 2명",
+            "지난 차시 관찰기록 — 촉각 자극에 반응"
+          ],
+          [
+            "2모둠",
+            "교실 물건에 자석을 가까이했을 때 현상을 교사 인도에 따라 바라보고 → 스티커로 표시한다",
+            "B수준 학생 2명",
+            "시범 후 스스로 표시 가능"
+          ],
+          [
+            "3모둠",
+            "자석과 여러 물체를 가까이했을 때 현상을 관찰하고 → 표로 정리한다",
+            "A수준 학생 1명",
+            "정리 문항에서 분류 근거를 말로 설명 가능"
+          ]
         ]
       },
       "student": null
     },
-
     "t1": {
       "teacher": {
         "type": "list",
@@ -47,7 +66,6 @@
         "text": "여러 가지 물건에 자석을 가까이 대 보세요. 어떤 물건이 붙나요?"
       }
     },
-
     "t2": {
       "teacher": {
         "type": "list",
@@ -64,7 +82,6 @@
         "text": "자석에 붙은 물건과 안 붙은 물건을 표시해 보세요."
       }
     },
-
     "exit_ticket": {
       "teacher": "형성 확인: 체크리스트로 어떤 자극-반응 조합에 실제로 반응했는지 기록. '지켜본다'만으로 대체하지 않는다.",
       "student": {
@@ -77,22 +94,42 @@
         ]
       }
     },
-
     "anchor_activity": {
       "type": "callout",
       "kind": "student-task",
       "label": "다 했다면",
       "text": "교실 안에서 자석에 붙을 것 같은 물건을 하나 더 찾아 대 보세요."
     },
-
     "reflect_prompt": {
       "type": "callout",
       "kind": "student-task",
       "label": "오늘 활동",
       "text": "오늘 한 것 중 가장 기억에 남는 것을 그리거나 한 문장으로 써 보세요."
+    },
+    "object_word_bank": {
+      "type": "cards",
+      "items": [
+        "클립",
+        "못",
+        "나무토막",
+        "플라스틱 조각",
+        "동전"
+      ]
+    },
+    "reflect_trace": {
+      "type": "trace",
+      "label": "오늘 한 것",
+      "text": "자석을 여러 물건에 대 보았어요."
+    },
+    "t1_word_choice": {
+      "type": "cards",
+      "items": [
+        "못",
+        "나무토막",
+        "플라스틱 조각"
+      ]
     }
   },
-
   "documents": [
     {
       "id": "teacher_plan",
@@ -100,39 +137,104 @@
       "title": "차별화 수업안: 자석에 붙는 물체",
       "eyebrow": "초등학교 3~4학년군 과학 · [4과학01-01]",
       "sections": [
-        { "heading": "성취기준", "blocks": [
-          { "type": "callout", "kind": "special", "label": "성취기준", "text": "[4과학01-01] 자석과 여러 가지 물체를 가까이했을 때 나타나는 현상을 관찰하고, 자석에 붙는 물체와 붙지 않는 물체를 분류한다." },
-          { "type": "from_shared", "key": "accommodation_note" }
-        ]},
-        { "heading": "그룹 편성", "blocks": [
-          { "type": "from_shared", "key": "grouping_note" },
-          { "type": "labeled", "label": "유연한 편성", "text": "그룹 배정은 이 수업의 관찰·체크리스트 결과에 따라 다음 차시에 조정될 수 있다." }
-        ]},
-        { "heading": "활동 1 — 자석 대보기 (모든 학생)", "blocks": [
-          { "type": "from_shared", "key": "t1", "label": "활동 1" }
-        ]},
-        { "heading": "활동 2 — 분류 표현 (그룹별)", "blocks": [
-          { "type": "from_shared", "key": "t2", "label": "활동 2" }
-        ]},
-        { "heading": "형성 확인", "blocks": [
-          { "type": "from_shared", "key": "exit_ticket" }
-        ]},
-        { "heading": "앵커 활동", "blocks": [
-          { "type": "from_shared", "key": "anchor_activity" }
-        ]},
-        { "heading": "이 설계가 통하는 이유 (1)", "blocks": [
-          { "type": "paragraph", "text": "세 그룹 모두 같은 자석·같은 물체 세트로 같은 현상을 경험한다. 국가 pool의 자극-반응 조합만 느껴보기→반응, 바라보기→표시, 관찰→정리로 달라져 '관찰하고 분류한다'는 성취기준을 모든 그룹이 각자의 통로로 향한다." }
-        ]},
-        { "heading": "이 설계가 통하는 이유 (2)", "blocks": [
-          { "type": "paragraph", "text": "1모둠(C수준)은 국가 pool의 '반응을 보인다'로, 2모둠(B수준)은 '스티커로 표시한다'로, 3모둠(A수준)은 '표로 정리한다'로 — 국가가 제공한 pool 조각을 그대로 형성 확인 기준으로 쓴다." }
-        ]},
-        { "heading": "다음 단계", "blocks": [
-          { "type": "list", "items": [
-            "체크리스트 결과로 그룹 재조정",
-            "시각중복장애 학생을 위한 점자 스티커 자석 준비(국가 자료 '적용 시 고려사항')",
-            "가정 연계: 냉장고 자석으로 같은 활동 반복"
-          ]}
-        ]}
+        {
+          "heading": "성취기준",
+          "blocks": [
+            {
+              "type": "callout",
+              "kind": "special",
+              "label": "성취기준",
+              "text": "[4과학01-01] 자석과 여러 가지 물체를 가까이했을 때 나타나는 현상을 관찰하고, 자석에 붙는 물체와 붙지 않는 물체를 분류한다."
+            },
+            {
+              "type": "from_shared",
+              "key": "accommodation_note"
+            }
+          ]
+        },
+        {
+          "heading": "그룹 편성",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "grouping_note"
+            },
+            {
+              "type": "labeled",
+              "label": "유연한 편성",
+              "text": "그룹 배정은 이 수업의 관찰·체크리스트 결과에 따라 다음 차시에 조정될 수 있다."
+            }
+          ]
+        },
+        {
+          "heading": "활동 1 — 자석 대보기 (모든 학생)",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t1",
+              "label": "활동 1"
+            }
+          ]
+        },
+        {
+          "heading": "활동 2 — 분류 표현 (그룹별)",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t2",
+              "label": "활동 2"
+            }
+          ]
+        },
+        {
+          "heading": "형성 확인",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "exit_ticket"
+            }
+          ]
+        },
+        {
+          "heading": "앵커 활동",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "anchor_activity"
+            }
+          ]
+        },
+        {
+          "heading": "이 설계가 통하는 이유 (1)",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "세 그룹 모두 같은 자석·같은 물체 세트로 같은 현상을 경험한다. 국가 pool의 자극-반응 조합만 느껴보기→반응, 바라보기→표시, 관찰→정리로 달라져 '관찰하고 분류한다'는 성취기준을 모든 그룹이 각자의 통로로 향한다."
+            }
+          ]
+        },
+        {
+          "heading": "이 설계가 통하는 이유 (2)",
+          "blocks": [
+            {
+              "type": "paragraph",
+              "text": "1모둠(C수준)은 국가 pool의 '반응을 보인다'로, 2모둠(B수준)은 '스티커로 표시한다'로, 3모둠(A수준)은 '표로 정리한다'로 — 국가가 제공한 pool 조각을 그대로 형성 확인 기준으로 쓴다."
+            }
+          ]
+        },
+        {
+          "heading": "다음 단계",
+          "blocks": [
+            {
+              "type": "list",
+              "items": [
+                "체크리스트 결과로 그룹 재조정",
+                "시각중복장애 학생을 위한 점자 스티커 자석 준비(국가 자료 '적용 시 고려사항')",
+                "가정 연계: 냉장고 자석으로 같은 활동 반복"
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -141,24 +243,78 @@
       "title": "1모둠",
       "eyebrow": "초등학교 3~4학년군 과학 · [4과학01-01]",
       "sections": [
-        { "heading": "자석 대보기", "blocks": [
-          { "type": "from_shared", "key": "t1", "label": "1" },
-          { "type": "workspace", "size": "small" }
-        ]},
-        { "heading": "붙는 것과 안 붙는 것", "blocks": [
-          { "type": "from_shared", "key": "t2", "label": "2" },
-          { "type": "workspace", "size": "small" }
-        ]},
-        { "heading": "오늘 확인해요", "blocks": [
-          { "type": "from_shared", "key": "exit_ticket" }
-        ]},
-        { "heading": "다 했다면", "blocks": [
-          { "type": "from_shared", "key": "anchor_activity" }
-        ]},
-        { "heading": "되돌아보기", "blocks": [
-          { "type": "from_shared", "key": "reflect_prompt" },
-          { "type": "workspace", "size": "small" }
-        ]}
+        {
+          "heading": "자석 대보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t1",
+              "label": "1"
+            },
+            {
+              "type": "paragraph",
+              "text": "**보기**"
+            },
+            {
+              "type": "from_shared",
+              "key": "t1_word_choice"
+            },
+            {
+              "type": "instructions",
+              "text": "자석에 __________이 붙어요."
+            }
+          ]
+        },
+        {
+          "heading": "붙는 것과 안 붙는 것",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t2",
+              "label": "2"
+            },
+            {
+              "type": "labeled",
+              "label": "해보기",
+              "text": "자석에 붙은 물건을 찾아 동그라미 하세요."
+            },
+            {
+              "type": "paragraph",
+              "text": "**보기**"
+            },
+            {
+              "type": "from_shared",
+              "key": "object_word_bank"
+            }
+          ]
+        },
+        {
+          "heading": "오늘 확인해요",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "exit_ticket"
+            }
+          ]
+        },
+        {
+          "heading": "다 했다면",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "anchor_activity"
+            }
+          ]
+        },
+        {
+          "heading": "되돌아보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "reflect_trace"
+            }
+          ]
+        }
       ]
     },
     {
@@ -167,24 +323,82 @@
       "title": "2모둠",
       "eyebrow": "초등학교 3~4학년군 과학 · [4과학01-01]",
       "sections": [
-        { "heading": "자석 대보기", "blocks": [
-          { "type": "from_shared", "key": "t1", "label": "1" },
-          { "type": "workspace", "size": "med" }
-        ]},
-        { "heading": "붙는 것과 안 붙는 것", "blocks": [
-          { "type": "from_shared", "key": "t2", "label": "2" },
-          { "type": "workspace", "size": "med" }
-        ]},
-        { "heading": "오늘 확인해요", "blocks": [
-          { "type": "from_shared", "key": "exit_ticket" }
-        ]},
-        { "heading": "다 했다면", "blocks": [
-          { "type": "from_shared", "key": "anchor_activity" }
-        ]},
-        { "heading": "되돌아보기", "blocks": [
-          { "type": "from_shared", "key": "reflect_prompt" },
-          { "type": "workspace", "size": "med" }
-        ]}
+        {
+          "heading": "자석 대보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t1",
+              "label": "1"
+            },
+            {
+              "type": "instructions",
+              "text": "자석에 __________이 붙어요."
+            }
+          ]
+        },
+        {
+          "heading": "붙는 것과 안 붙는 것",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t2",
+              "label": "2"
+            },
+            {
+              "type": "paragraph",
+              "text": "**보기**"
+            },
+            {
+              "type": "from_shared",
+              "key": "object_word_bank"
+            },
+            {
+              "type": "labeled",
+              "label": "해보기",
+              "text": "물건을 골라 알맞은 칸에 써 보세요."
+            },
+            {
+              "type": "fill_table",
+              "headers": [
+                "붙는 것",
+                "안 붙는 것"
+              ],
+              "blank_rows": 3
+            }
+          ]
+        },
+        {
+          "heading": "오늘 확인해요",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "exit_ticket"
+            }
+          ]
+        },
+        {
+          "heading": "다 했다면",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "anchor_activity"
+            }
+          ]
+        },
+        {
+          "heading": "되돌아보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "reflect_prompt"
+            },
+            {
+              "type": "workspace",
+              "size": "med"
+            }
+          ]
+        }
       ]
     },
     {
@@ -193,25 +407,70 @@
       "title": "3모둠",
       "eyebrow": "초등학교 3~4학년군 과학 · [4과학01-01]",
       "sections": [
-        { "heading": "자석 대보기", "blocks": [
-          { "type": "from_shared", "key": "t1", "label": "1" },
-          { "type": "workspace", "size": "med" }
-        ]},
-        { "heading": "분류하고 설명하기", "blocks": [
-          { "type": "from_shared", "key": "t2", "label": "2" },
-          { "type": "labeled", "label": "설명해 보기", "text": "왜 어떤 물건은 붙고 어떤 물건은 안 붙는지 이유를 써 보세요." },
-          { "type": "workspace", "size": "large" }
-        ]},
-        { "heading": "오늘 확인해요", "blocks": [
-          { "type": "from_shared", "key": "exit_ticket" }
-        ]},
-        { "heading": "다 했다면", "blocks": [
-          { "type": "from_shared", "key": "anchor_activity" }
-        ]},
-        { "heading": "되돌아보기", "blocks": [
-          { "type": "from_shared", "key": "reflect_prompt" },
-          { "type": "workspace", "size": "med" }
-        ]}
+        {
+          "heading": "자석 대보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t1",
+              "label": "1"
+            },
+            {
+              "type": "workspace",
+              "size": "med"
+            }
+          ]
+        },
+        {
+          "heading": "분류하고 설명하기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "t2",
+              "label": "2"
+            },
+            {
+              "type": "labeled",
+              "label": "설명해 보기",
+              "text": "왜 어떤 물건은 붙고 어떤 물건은 안 붙는지 이유를 써 보세요."
+            },
+            {
+              "type": "workspace",
+              "size": "large"
+            }
+          ]
+        },
+        {
+          "heading": "오늘 확인해요",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "exit_ticket"
+            }
+          ]
+        },
+        {
+          "heading": "다 했다면",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "anchor_activity"
+            }
+          ]
+        },
+        {
+          "heading": "되돌아보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "reflect_prompt"
+            },
+            {
+              "type": "workspace",
+              "size": "med"
+            }
+          ]
+        }
       ]
     }
   ]

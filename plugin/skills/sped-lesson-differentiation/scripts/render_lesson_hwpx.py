@@ -605,6 +605,23 @@ def emit_fill_in(w, blk, theme):
     w.para(runs, est_pt=18.0)
 
 
+def emit_trace(w, blk, theme):
+    """정답을 옅은 회색으로 미리 인쇄해 학생이 따라 쓰게 한다(국가 학습지의
+    '따라쓰기' 관행 — R3 참고). 자극-반응이 가장 구체적인 그룹(1모둠)용이며,
+    빈 답란(workspace)과 달리 답이 이미 지면에 있다."""
+    label = label_text(blk)
+    text = blk.get("text", "")
+    paras = []
+    if label:
+        paras += [f'<hp:p paraPrIDRef="{PP_CENTER}" styleIDRef="0">'
+                  f'{_run(chrome_ko(label), CH_BOLD)}</hp:p>']
+    if text:
+        paras += _cell_paras(text, CH_GRAY, PP_CENTER)
+    est = 26 + 16 * max(1, -(-len(str(text)) // (CHARS_EST - 2)))
+    w.tbl([{"cells": [(paras, BF_LIGHT)], "height_u": int(est * U * 0.9)}],
+          table_border=BF_LIGHT)
+
+
 def emit_group(w, blk, theme):
     blocks = blk.get("blocks", [])
     if not blocks:
@@ -846,6 +863,7 @@ _EMITTERS = {
     "callout": emit_callout,
     "cards": emit_cards,
     "fill_in": emit_fill_in,
+    "trace": emit_trace,
     "group": emit_group,
     "columns": emit_columns,
     "workspace": lambda w, b, t: emit_workspace(w, b, t, labeled=True),
@@ -873,7 +891,7 @@ def emit_block(w, blk: dict, theme: Theme):
 
 # 학생이 답을 쓰는 블록 — 지시 블록과 쪽이 갈리면 안 되는 대상(결함 V4)
 _ANSWER_TYPES = {"workspace", "labeled_box", "fill_table", "number_line",
-                 "fill_in", "table"}
+                 "fill_in", "table", "trace"}
 
 
 def _first_answer_tall(blocks, theme) -> bool:
