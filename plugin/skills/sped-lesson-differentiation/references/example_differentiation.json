@@ -128,6 +128,35 @@
         "나무토막",
         "플라스틱 조각"
       ]
+    },
+    "intro_note": {
+      "teacher": {
+        "type": "labeled",
+        "label": "도입",
+        "text": "자석 실물(또는 그림)을 보여주며 오늘 무엇을 할지 학생 언어로 먼저 설명한다: '오늘은 자석에 물건을 대 보고, 붙는 것과 안 붙는 것을 알아볼 거예요.' 시각중복장애 학생에게는 자석을 직접 손에 쥐여주며 같은 말을 반복한다."
+      },
+      "student": {
+        "type": "callout",
+        "kind": "student-task",
+        "label": "오늘 배울 것",
+        "text": "오늘은 자석이 무엇에 붙는지 알아볼 거예요. 여러 가지 물건에 자석을 대 보고, 붙는 것과 안 붙는 것을 찾아볼 거예요."
+      }
+    },
+    "step1_look": {
+      "teacher": {
+        "type": "list",
+        "items": [
+          "오늘 쓸 물건 5가지(클립, 못, 나무토막, 플라스틱 조각, 동전)를 책상에 늘어놓는다.",
+          "1모둠: 교사가 물건을 하나씩 들어 보이며 이름을 말해준다.",
+          "2~3모둠: 학생이 직접 물건을 하나씩 만지며 이름을 확인하게 한다."
+        ]
+      },
+      "student": {
+        "type": "callout",
+        "kind": "student-task",
+        "label": "물건 살펴보기",
+        "text": "오늘 자석에 대 볼 물건들이에요. 무엇이 있는지 살펴보세요."
+      }
     }
   },
   "documents": [
@@ -167,22 +196,31 @@
           ]
         },
         {
-          "heading": "활동 1 — 자석 대보기 (모든 학생, 15분)",
+          "heading": "도입 (5분)",
           "blocks": [
             {
               "type": "from_shared",
-              "key": "t1",
-              "label": "활동 1"
+              "key": "intro_note"
             }
           ]
         },
         {
-          "heading": "활동 2 — 분류 표현 (그룹별, 15분)",
+          "heading": "활동 1 — 물건에 자석 대보기 (모든 학생, 20분)",
           "blocks": [
             {
               "type": "from_shared",
+              "key": "step1_look",
+              "label": "①"
+            },
+            {
+              "type": "from_shared",
+              "key": "t1",
+              "label": "②"
+            },
+            {
+              "type": "from_shared",
               "key": "t2",
-              "label": "활동 2"
+              "label": "③"
             }
           ]
         },
@@ -244,12 +282,34 @@
       "eyebrow": "초등학교 3~4학년군 과학 · [4과학01-01]",
       "sections": [
         {
-          "heading": "자석 대보기",
+          "heading": "오늘 배울 것",
           "blocks": [
             {
               "type": "from_shared",
+              "key": "intro_note"
+            }
+          ]
+        },
+        {
+          "heading": "물건에 자석 대보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "step1_look",
+              "label": "①"
+            },
+            {
+              "type": "paragraph",
+              "text": "**보기**"
+            },
+            {
+              "type": "from_shared",
+              "key": "object_word_bank"
+            },
+            {
+              "type": "from_shared",
               "key": "t1",
-              "label": "1"
+              "label": "②"
             },
             {
               "type": "paragraph",
@@ -271,7 +331,7 @@
             {
               "type": "from_shared",
               "key": "t2",
-              "label": "2"
+              "label": "③"
             },
             {
               "type": "labeled",
@@ -325,12 +385,34 @@
       "eyebrow": "초등학교 3~4학년군 과학 · [4과학01-01]",
       "sections": [
         {
-          "heading": "자석 대보기",
+          "heading": "오늘 배울 것",
           "blocks": [
             {
               "type": "from_shared",
+              "key": "intro_note"
+            }
+          ]
+        },
+        {
+          "heading": "물건에 자석 대보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "step1_look",
+              "label": "①"
+            },
+            {
+              "type": "paragraph",
+              "text": "**보기**"
+            },
+            {
+              "type": "from_shared",
+              "key": "object_word_bank"
+            },
+            {
+              "type": "from_shared",
               "key": "t1",
-              "label": "1"
+              "label": "②"
             },
             {
               "type": "instructions",
@@ -344,7 +426,7 @@
             {
               "type": "from_shared",
               "key": "t2",
-              "label": "2"
+              "label": "③"
             },
             {
               "type": "paragraph",
@@ -410,12 +492,26 @@
       "eyebrow": "초등학교 3~4학년군 과학 · [4과학01-01]",
       "sections": [
         {
-          "heading": "자석 대보기",
+          "heading": "오늘 배울 것",
           "blocks": [
             {
               "type": "from_shared",
+              "key": "intro_note"
+            }
+          ]
+        },
+        {
+          "heading": "물건에 자석 대보기",
+          "blocks": [
+            {
+              "type": "from_shared",
+              "key": "step1_look",
+              "label": "①"
+            },
+            {
+              "type": "from_shared",
               "key": "t1",
-              "label": "1"
+              "label": "②"
             },
             {
               "type": "workspace",
@@ -429,7 +525,7 @@
             {
               "type": "from_shared",
               "key": "t2",
-              "label": "2"
+              "label": "③"
             },
             {
               "type": "labeled",
